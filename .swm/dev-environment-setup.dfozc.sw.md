@@ -3,6 +3,8 @@ id: dfozc
 name: Dev Environment Setup
 file_version: 1.0.2
 app_version: 0.8.5-0
+file_blobs:
+  next.config.js: 73a40f8ac1eb7a723fed08de2004338d0c82f8fb
 ---
 
 ### **Prerequisites**
@@ -27,6 +29,26 @@ app_version: 0.8.5-0
 *   Install NPM packages `npm instal`
     
 *   Start the development server `npm run dev`
+
+<br/>
+
+To serve images from an external domain you need to add the domain itself to the domains array
+<!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
+### 📄 next.config.js
+```javascript
+🟩 1      module.exports = {
+🟩 2        images: {
+🟩 3          domains: [
+🟩 4            "res.cloudinary.com",
+🟩 5            "abs.twimg.com",
+🟩 6            "pbs.twimg.com",
+🟩 7            "api.producthunt.com",
+🟩 8            "avatars.githubusercontent.com",
+🟩 9          ],
+🟩 10       },
+🟩 11     };
+⬜ 12     
+```
 
 <br/>
 
