@@ -11,6 +11,8 @@ When clicking on any movie on the home page it should redirect to the movie deta
 <br>
 Don’t put too much effort into the UI design.
 <br>
+Create a new branch from main branch then start building 🛠
+<br>
 Good Luck!
 
 
