@@ -32,7 +32,7 @@ file_blobs:
 
 <br/>
 
-To serve images from an external domain you need to add the domain itself to the domains array
+To serve images from an external domain you need to add the host to the domains array check example [here](https://nextjs.org/docs/messages/next-image-unconfigured-host)
 <!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
 ### 📄 next.config.js
 ```javascript
