@@ -7,6 +7,8 @@ file_blobs:
   next.config.js: 73a40f8ac1eb7a723fed08de2004338d0c82f8fb
 ---
 
+# IMPORTANT: All your routes should be under `📄 pages/home` directory
+
 ### **Prerequisites**
 
 *   Install [Node JS](https://nodejs.org/en/download/), version `16.x`
