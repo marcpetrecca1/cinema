@@ -41,3 +41,9 @@ Theme Switcher
 The app should contain a theme switcher button "floating action button" that is displayed across all pages
 
 When clicking this button it should change the background of the app "if it's white switch it to grey & vice versa"
+
+
+BONUS:
+
+Convert app to TypeScript
+Connect to multiple APIs 
