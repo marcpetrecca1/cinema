@@ -46,4 +46,5 @@ When clicking this button it should change the background of the app "if it's wh
 BONUS:
 
 Convert app to TypeScript
+
 Connect to multiple APIs 
