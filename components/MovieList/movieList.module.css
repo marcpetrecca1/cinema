@@ -1,0 +1,6 @@
+.listContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  width: 68.75rem;
+}

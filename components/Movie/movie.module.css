@@ -1,0 +1,23 @@
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 32px;
+}
+
+.styleDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageContainer {
+  height: 25rem;
+  width: 21.875rem;
+}
+
+.movieInfo {
+  height: 15.625rem;
+  width: 21.875rem;
+}
