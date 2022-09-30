@@ -10,7 +10,7 @@ export async function getStaticProps() {
   );
 
   const list = await res.json();
-
+  console.log(list);
   return {
     props: {
       list,
@@ -23,6 +23,7 @@ const DynamicList = dynamic(() => import('../../components/MovieList'), {
 });
 
 export default function Home({ list }) {
+  console.log(list);
   const [movieList, setMovieList] = useState(list.results);
 
   return (
