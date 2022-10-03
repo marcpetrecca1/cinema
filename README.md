@@ -1,6 +1,6 @@
 # movies-app
 
-// Test Test Test
+// Test Test
 
 Develop movies app using any public API that you prefer.
 <br>
