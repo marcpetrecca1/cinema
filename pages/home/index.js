@@ -25,12 +25,12 @@ const DynamicList = dynamic(() => import('../../components/MovieList'), {
 
 export default function Home({ list }) {
   const [movieList, setMovieList] = useState(list.results);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
 
   const loadMoreMovies = async (e) => {
     e.preventDefault();
+    setPage(page + 1);
     try {
-      setPage(page + 1);
       let res = await fetch(
         `https://api.themoviedb.org/3/movie/top_rated?api_key=3dc9ae0cad96dd405d8a8ca9ab9e4c4d&page=${page}`
       );
