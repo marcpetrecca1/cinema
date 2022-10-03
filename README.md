@@ -1,4 +1,7 @@
 # movies-app
+
+// Test Test
+
 Develop movies app using any public API that you prefer.
 <br>
 The home page should contain a list of the latest movies available.
@@ -14,7 +17,6 @@ Don’t put too much effort into the UI design.
 Create a new branch from main branch then start building 🛠
 <br>
 Good Luck!
-
 
 **Home Page:**
 
@@ -42,9 +44,8 @@ The app should contain a theme switcher button "floating action button" that is 
 
 When clicking this button it should change the background of the app "if it's white switch it to grey & vice versa"
 
-
 **BONUS:**
 
 Convert app to TypeScript
 
-Connect to multiple APIs 
+Connect to multiple APIs
