@@ -32,6 +32,8 @@ export default function Home({ list }) {
   const [showMovieList, setShowMovieList] = useState(true);
   const [searchInput, setSearchInput] = useState('');
 
+  // can create a single state object and updateState function if needed
+
   useEffect(() => {
     toggleList();
   }, [searchInput]);
@@ -42,6 +44,10 @@ export default function Home({ list }) {
     }
     setShowMovieList(true);
     setSearchList([]);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchInput(e.target.value);
   };
 
   const loadMoreMovies = async (e) => {
@@ -56,10 +62,6 @@ export default function Home({ list }) {
     } catch (error) {
       console.error(error);
     }
-  };
-
-  const handleSearchChange = (e) => {
-    setSearchInput(e.target.value);
   };
 
   const searchOnSubmit = async (e) => {
