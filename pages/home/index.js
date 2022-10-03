@@ -46,7 +46,7 @@ export default function Home({ list }) {
 
   const loadMoreMovies = async (e) => {
     e.preventDefault();
-    setPage(page + 1);
+    setPage((page) => page + 1);
     try {
       let res = await fetch(
         `https://api.themoviedb.org/3/movie/top_rated?api_key=3dc9ae0cad96dd405d8a8ca9ab9e4c4d&page=${page}`
