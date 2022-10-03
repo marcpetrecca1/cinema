@@ -5,6 +5,7 @@ import Button from '@/components/Button';
 import SearchBar from '@/components/SearchBar';
 import Head from 'next/head';
 import Image from 'next/image';
+import { API_KEY } from 'movieAPI.config';
 
 export async function getStaticProps() {
   const res = await fetch(
@@ -26,8 +27,9 @@ const DynamicList = dynamic(() => import('../../components/MovieList'), {
 
 export default function Home({ list }) {
   const [movieList, setMovieList] = useState(list.results);
+  const [searchList, setSearchList] = useState([]);
   const [page, setPage] = useState(2);
-  const [showList, setShowList] = useState(true);
+  const [showMovieList, setShowMovieList] = useState(true);
   const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
@@ -36,9 +38,10 @@ export default function Home({ list }) {
 
   const toggleList = () => {
     if (searchInput !== '') {
-      return setShowList(false);
+      return setShowMovieList(false);
     }
-    setShowList(true);
+    setShowMovieList(true);
+    setSearchList([]);
   };
 
   const loadMoreMovies = async (e) => {
@@ -59,6 +62,20 @@ export default function Home({ list }) {
     setSearchInput(e.target.value);
   };
 
+  const searchOnSubmit = async (e) => {
+    e.preventDefault();
+    let encoded = encodeURIComponent(searchInput);
+    try {
+      let res = await fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encoded}`
+      );
+      let newList = await res.json().then((result) => result.results);
+      setSearchList(newList);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const buttonInfo = {
     name: 'addMovies',
     type: 'button',
@@ -72,9 +89,16 @@ export default function Home({ list }) {
       <SearchBar
         searchInput={searchInput}
         handleSearchChange={handleSearchChange}
+        searchOnSubmit={searchOnSubmit}
       />
-      {movieList && showList && <DynamicList movieList={movieList} />}
-      {showList && (
+      {movieList && (
+        <DynamicList
+          movieList={movieList}
+          showMovieList={showMovieList}
+          searchList={searchList}
+        />
+      )}
+      {showMovieList && (
         <Button
           name={buttonInfo.name}
           type={buttonInfo.type}

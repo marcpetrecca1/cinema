@@ -1,8 +1,12 @@
 import styles from './searchBar.module.css';
 
-export default function SearchBar({ searchInput, handleSearchChange }) {
+export default function SearchBar({
+  searchInput,
+  handleSearchChange,
+  searchOnSubmit,
+}) {
   return (
-    <form className={styles.formContainer}>
+    <form className={styles.formContainer} onSubmit={(e) => searchOnSubmit(e)}>
       <input
         className={styles.searchInput}
         type='search'

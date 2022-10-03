@@ -1,4 +1,5 @@
 import styles from './movie.module.css';
+import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Movie({
@@ -10,7 +11,9 @@ export default function Movie({
 }) {
   return (
     <div className={styles.detailsContainer} key={id}>
-      <h2 className={styles.title}>{title}</h2>
+      <h2 className={styles.title}>
+        <Link href='/movieDetails'>{title}</Link>
+      </h2>
       <div className={styles.styleDetails}>
         <div className={styles.imageContainer}>
           {/* <Image
