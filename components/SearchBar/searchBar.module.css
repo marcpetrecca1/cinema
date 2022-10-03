@@ -1,0 +1,8 @@
+.formContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.searchInput {
+  border-radius: 12px;
+}

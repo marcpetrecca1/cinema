@@ -7,6 +7,7 @@ export default function MovieList({ movieList }) {
       {movieList &&
         movieList.map((movie) => (
           <Movie
+            key={movie.id}
             id={movie.id}
             title={movie.title}
             popularity={movie.popularity}

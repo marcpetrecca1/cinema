@@ -13,7 +13,11 @@ export default function Movie({
       <h2 className={styles.title}>{title}</h2>
       <div className={styles.styleDetails}>
         <div className={styles.imageContainer}>
-          {/* <Image src={`https://image.tmdb.org/t/p/original/${posterPath}`} width={100}height={200} /> */}
+          {/* <Image
+            src={`https://image.tmdb.org/t/p/original${posterPath}`}
+            width={100}
+            height={200}
+          /> */}
         </div>
         <div className={styles.movieInfo}>
           <span className={styles.metric}>{popularity}</span>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../../styles/index.module.css';
 import dynamic from 'next/dynamic';
-import Button from '../../components/Button';
+import Button from '@/components/Button';
+import SearchBar from '@/components/SearchBar';
 import Head from 'next/head';
 import Image from 'next/image';
 
@@ -26,6 +27,19 @@ const DynamicList = dynamic(() => import('../../components/MovieList'), {
 export default function Home({ list }) {
   const [movieList, setMovieList] = useState(list.results);
   const [page, setPage] = useState(2);
+  const [showList, setShowList] = useState(true);
+  const [searchInput, setSearchInput] = useState('');
+
+  useEffect(() => {
+    toggleList();
+  }, [searchInput]);
+
+  const toggleList = () => {
+    if (searchInput !== '') {
+      return setShowList(false);
+    }
+    setShowList(true);
+  };
 
   const loadMoreMovies = async (e) => {
     e.preventDefault();
@@ -41,6 +55,10 @@ export default function Home({ list }) {
     }
   };
 
+  const handleSearchChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
   const buttonInfo = {
     name: 'addMovies',
     type: 'button',
@@ -51,13 +69,19 @@ export default function Home({ list }) {
   return (
     <div className={styles.appContainer}>
       <h1 className={styles.appTitle}>Movies App</h1>
-      {movieList && <DynamicList movieList={movieList} />}
-      <Button
-        name={buttonInfo.name}
-        type={buttonInfo.type}
-        content={buttonInfo.content}
-        handler={buttonInfo.handler}
+      <SearchBar
+        searchInput={searchInput}
+        handleSearchChange={handleSearchChange}
       />
+      {movieList && showList && <DynamicList movieList={movieList} />}
+      {showList && (
+        <Button
+          name={buttonInfo.name}
+          type={buttonInfo.type}
+          content={buttonInfo.content}
+          handler={buttonInfo.handler}
+        />
+      )}
     </div>
   );
 }

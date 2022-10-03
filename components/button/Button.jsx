@@ -4,7 +4,7 @@ export default function Button({ name, type, content, handler }) {
   return (
     <div className={styles.buttonContainer}>
       <button
-        className={styles.button}
+        className={styles[`${name}`]}
         name={name}
         type={type}
         onClick={(e) => handler(e)}
