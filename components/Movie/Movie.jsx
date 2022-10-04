@@ -11,9 +11,9 @@ export default function Movie({
 }) {
   return (
     <div className={styles.detailsContainer} key={id}>
-      <h2 className={styles.title}>
-        <Link href='/movieDetails'>{title}</Link>
-      </h2>
+      <Link href={`/movieDetails/${id}`}>
+        <h2 className={styles.title}>{title}</h2>
+      </Link>
       <div className={styles.styleDetails}>
         <div className={styles.imageContainer}>
           {/* <Image

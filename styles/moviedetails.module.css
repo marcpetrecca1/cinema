@@ -1,0 +1,28 @@
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 0.5rem;
+  width: 500px;
+  height: 600px;
+  margin: 10vh auto;
+}
+
+.title {
+  font-size: 32px;
+}
+
+.styleDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageContainer {
+  height: 25rem;
+  width: 21.875rem;
+}
+
+.movieInfo {
+  height: 15.625rem;
+  width: 21.875rem;
+}

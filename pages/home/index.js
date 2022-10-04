@@ -32,7 +32,7 @@ export default function Home({ list }) {
   const [showMovieList, setShowMovieList] = useState(true);
   const [searchInput, setSearchInput] = useState('');
 
-  // can create a single state object and updateState function if needed
+  // // can create a single state object and updateState function if needed
 
   useEffect(() => {
     toggleList();
@@ -43,7 +43,6 @@ export default function Home({ list }) {
       return setShowMovieList(false);
     }
     setShowMovieList(true);
-    setSearchList([]);
   };
 
   const handleSearchChange = (e) => {
