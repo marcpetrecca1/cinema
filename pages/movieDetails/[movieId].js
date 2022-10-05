@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { API_KEY } from 'movieAPI.config';
-import styles from '../../../styles/moviedetails.module.css';
+import styles from '../../styles/moviedetails.module.css';
 
 export default function Details() {
   const [details, setDetails] = useState(null);

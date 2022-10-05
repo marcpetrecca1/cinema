@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../../styles/index.module.css';
+import styles from '../styles/index.module.css';
 import dynamic from 'next/dynamic';
 import Button from '@/components/Button';
 import SearchBar from '@/components/SearchBar';
@@ -21,7 +21,7 @@ export async function getStaticProps() {
   };
 }
 
-const DynamicList = dynamic(() => import('../../components/MovieList'), {
+const DynamicList = dynamic(() => import('../components/MovieList'), {
   suspsense: true,
 });
 
