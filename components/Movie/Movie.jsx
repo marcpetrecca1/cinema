@@ -12,7 +12,9 @@ export default function Movie({
   return (
     <div className={styles.detailsContainer} key={id}>
       <Link href={`/movieDetails/${id}`}>
-        <h2 className={styles.title}>{title}</h2>
+        <a>
+          <h2 className={styles.title}>{title}</h2>
+        </a>
       </Link>
       <div className={styles.styleDetails}>
         <div className={styles.imageContainer}>

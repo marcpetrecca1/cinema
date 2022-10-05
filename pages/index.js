@@ -43,6 +43,7 @@ export default function Home({ list }) {
       return setShowMovieList(false);
     }
     setShowMovieList(true);
+    setSearchList([]);
   };
 
   const handleSearchChange = (e) => {
