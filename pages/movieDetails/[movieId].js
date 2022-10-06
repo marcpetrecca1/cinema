@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { API_KEY } from 'movieAPI.config';
+import { useTheme } from '../../context/state';
+import ThemeSwitch from '@/components/ThemeSwitch';
 import styles from '../../styles/moviedetails.module.css';
 
 export default function Details() {
   const [details, setDetails] = useState(null);
-
   const router = useRouter();
+  const { themeState } = useTheme();
 
   const { movieId } = router.query;
+
+  console.log('themeState from Details page', themeState);
 
   const getDetails = async (id) => {
     let res = await fetch(
@@ -25,20 +29,23 @@ export default function Details() {
 
   return (
     details && (
-      <div className={styles.detailsContainer} key={details.id}>
-        <h2 className={styles.title}>{details.title}</h2>
-        <div className={styles.styleDetails}>
-          <div className={styles.imageContainer}>
-            {/* <Image
+      <div className={themeState ? 'appContainerWhite' : 'appContainerGrey'}>
+        <div className={styles.detailsContainer} key={details.id}>
+          <h2 className={styles.title}>{details.title}</h2>
+          <div className={styles.styleDetails}>
+            <div className={styles.imageContainer}>
+              {/* <Image
         src={`https://image.tmdb.org/t/p/original${posterPath}`}
         width={100}
         height={200}
       /> */}
+            </div>
+            <div className={styles.movieInfo}>
+              <span className={styles.metric}>{details.popularity}</span>
+              <span className={styles.metric}>{details.vote_count}</span>
+            </div>
           </div>
-          <div className={styles.movieInfo}>
-            <span className={styles.metric}>{details.popularity}</span>
-            <span className={styles.metric}>{details.vote_count}</span>
-          </div>
+          <ThemeSwitch />
         </div>
       </div>
     )

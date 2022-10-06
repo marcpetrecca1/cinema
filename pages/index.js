@@ -3,8 +3,8 @@ import styles from '../styles/index.module.css';
 import dynamic from 'next/dynamic';
 import Button from '@/components/Button';
 import SearchBar from '@/components/SearchBar';
-import Head from 'next/head';
-import Image from 'next/image';
+import ThemeSwitch from '@/components/ThemeSwitch';
+import { useTheme } from '../context/state';
 import { API_KEY } from 'movieAPI.config';
 
 export async function getStaticProps() {
@@ -31,8 +31,9 @@ export default function Home({ list }) {
   const [page, setPage] = useState(2);
   const [showMovieList, setShowMovieList] = useState(true);
   const [searchInput, setSearchInput] = useState('');
+  const { themeState } = useTheme();
 
-  // // can create a single state object and updateState function if needed
+  console.log('themeState from main app', themeState);
 
   useEffect(() => {
     toggleList();
@@ -86,7 +87,11 @@ export default function Home({ list }) {
   };
 
   return (
-    <div className={styles.appContainer}>
+    <div
+      className={
+        themeState ? styles.appContainerWhite : styles.appContainerGrey
+      }
+    >
       <h1 className={styles.appTitle}>Movies App</h1>
       <SearchBar
         searchInput={searchInput}
@@ -108,6 +113,7 @@ export default function Home({ list }) {
           handler={buttonInfo.handler}
         />
       )}
+      <ThemeSwitch />
     </div>
   );
 }

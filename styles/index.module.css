@@ -1,9 +1,18 @@
-.appContainer {
+.appContainerWhite {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+}
+
+.appContainerGrey {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: grey;
 }
 
 .appTitle {

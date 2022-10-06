@@ -3,3 +3,12 @@
   padding: 0.5rem 1rem;
   border-radius: 12px;
 }
+
+.goGrey {
+  background-color: grey;
+  box-shadow: 1px 1px 0.5px #aaaaaa;
+}
+
+.goWhite {
+  box-shadow: 1px 1px 0.5px #aaaaaa;
+}

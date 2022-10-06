@@ -6,6 +6,7 @@
   width: 500px;
   height: 600px;
   margin: 10vh auto;
+  background-color: rgb(206, 229, 249);
 }
 
 .title {
@@ -25,4 +26,25 @@
 .movieInfo {
   height: 15.625rem;
   width: 21.875rem;
+}
+
+.appContainerWhite {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 100%;
+  width: 100%;
+}
+
+.appContainerGrey {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: grey;
+  height: 100%;
+  width: 100%;
 }
