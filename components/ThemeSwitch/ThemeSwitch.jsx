@@ -1,7 +1,6 @@
 import styles from './themeswitch.module.css';
-import Button from '../Button/Button.jsx';
+import Button from '../Button/';
 import { useTheme } from '../../context/state';
-import { useLayoutEffect } from 'react';
 
 export default function ThemeSwitch() {
   const { themeState, toggleTheme } = useTheme();
