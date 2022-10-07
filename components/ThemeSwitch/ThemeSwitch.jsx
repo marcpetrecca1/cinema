@@ -7,7 +7,9 @@ export default function ThemeSwitch() {
 
   return (
     <div className={styles.themeSwitchContainer}>
-      <div>Change to {themeState ? 'dark mode' : 'light mode'}</div>
+      <div className={styles.themeSwitchText}>
+        Change to {themeState ? 'dark mode' : 'light mode'}
+      </div>
       <div className={styles.buttonContainer}>
         <Button
           name={themeState ? 'goGrey' : 'goWhite'}
