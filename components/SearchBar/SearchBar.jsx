@@ -4,6 +4,7 @@ export default function SearchBar({
   searchInput,
   handleSearchChange,
   searchOnSubmit,
+  isLoading,
 }) {
   return (
     <form className={styles.formContainer} onSubmit={(e) => searchOnSubmit(e)}>
@@ -15,7 +16,12 @@ export default function SearchBar({
         value={searchInput}
         onChange={(e) => handleSearchChange(e)}
       />
-      <input className={styles.searchSubmit} type='submit' value='Enter' />
+      <input
+        className={styles.searchSubmit}
+        type='submit'
+        value='Enter'
+        disabled={isLoading}
+      />
     </form>
   );
 }

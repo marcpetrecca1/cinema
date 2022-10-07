@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Button from '../components/Button';
 import SearchBar from '@/components/SearchBar';
 import ThemeSwitch from '@/components/ThemeSwitch';
+import LoadingSpinner from '@/components/LoadingSpinner';
 import { useTheme } from '../context/state';
 import { API_KEY } from 'movieAPI.config';
 
@@ -31,6 +32,7 @@ export default function Home({ list }) {
   const [page, setPage] = useState(2);
   const [showMovieList, setShowMovieList] = useState(true);
   const [searchInput, setSearchInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const { themeState } = useTheme();
 
   useEffect(() => {
@@ -65,6 +67,7 @@ export default function Home({ list }) {
 
   const searchOnSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     let encoded = encodeURIComponent(searchInput);
     try {
       let res = await fetch(
@@ -72,8 +75,10 @@ export default function Home({ list }) {
       );
       let newList = await res.json().then((result) => result.results);
       setSearchList(newList);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
+      setIsLoading(false);
     }
   };
 
@@ -91,19 +96,22 @@ export default function Home({ list }) {
       }
     >
       <h1 className={styles.appTitle}>Movies App</h1>
-      <SearchBar
-        searchInput={searchInput}
-        handleSearchChange={handleSearchChange}
-        searchOnSubmit={searchOnSubmit}
-      />
-      {movieList && (
+      {!isLoading && (
+        <SearchBar
+          searchInput={searchInput}
+          handleSearchChange={handleSearchChange}
+          searchOnSubmit={searchOnSubmit}
+          isLoading={isLoading}
+        />
+      )}
+      {!isLoading && movieList && (
         <DynamicList
           movieList={movieList}
           showMovieList={showMovieList}
           searchList={searchList}
         />
       )}
-      {showMovieList && (
+      {!isLoading && showMovieList && (
         <Button
           name={buttonInfo.name}
           type={buttonInfo.type}
@@ -111,6 +119,7 @@ export default function Home({ list }) {
           handler={buttonInfo.handler}
         />
       )}
+      {isLoading && <LoadingSpinner />}
       <ThemeSwitch />
     </div>
   );
