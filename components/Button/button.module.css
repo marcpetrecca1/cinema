@@ -2,6 +2,8 @@
   border: 1px solid black;
   padding: 0.5rem 1rem;
   border-radius: 12px;
+  background-color: rgb(5, 31, 45);
+  color: rgb(185, 228, 246);
 }
 
 .goGrey {

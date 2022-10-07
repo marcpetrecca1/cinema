@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  padding-top: 1rem;
 }
 
 .appContainerGrey {
@@ -13,8 +14,11 @@
   align-items: center;
   gap: 2rem;
   background-color: grey;
+  padding-top: 1rem;
 }
 
 .appTitle {
   font-size: 32px;
+  font-weight: 600;
+  color: rgb(5, 31, 45);
 }

@@ -1,16 +1,17 @@
 .detailsContainer {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  padding: 0.5rem;
-  width: 500px;
-  height: 600px;
-  /* margin: 10vh auto; */
+  border: 1px solid rgb(212, 211, 211);
+  padding: 1.5rem 1.5rem;
+  margin: 2rem;
   background-color: rgb(206, 229, 249);
+  border-radius: 7px;
 }
 
 .title {
   font-size: 32px;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
 }
 
 .styleDetails {
@@ -24,8 +25,11 @@
 }
 
 .movieInfo {
-  height: 15.625rem;
-  width: 21.875rem;
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
 }
 
 .appContainerWhite {
@@ -33,10 +37,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 .appContainerGrey {
@@ -44,9 +46,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
   background-color: grey;
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.metric {
+  color: rgb(45, 45, 239);
+}
+
+.infoHeader {
+  color: rgb(5, 31, 45);
+  font-weight: 600;
 }

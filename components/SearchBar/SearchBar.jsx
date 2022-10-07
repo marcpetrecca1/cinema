@@ -9,7 +9,7 @@ export default function SearchBar({
     <form className={styles.formContainer} onSubmit={(e) => searchOnSubmit(e)}>
       <input
         className={styles.searchInput}
-        type='search'
+        type='text'
         name='name'
         placeholder='Search'
         value={searchInput}

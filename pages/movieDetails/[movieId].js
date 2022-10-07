@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { API_KEY } from 'movieAPI.config';
 import { useTheme } from '../../context/state';
+import Image from 'next/image';
 import ThemeSwitch from '@/components/ThemeSwitch';
 import styles from '../../styles/moviedetails.module.css';
+import { info } from 'autoprefixer';
 
 export default function Details() {
   const [details, setDetails] = useState(null);
@@ -36,15 +38,22 @@ export default function Details() {
           <h2 className={styles.title}>{details.title}</h2>
           <div className={styles.styleDetails}>
             <div className={styles.imageContainer}>
-              {/* <Image
-        src={`https://image.tmdb.org/t/p/original${posterPath}`}
-        width={100}
-        height={200}
-      /> */}
+              <Image
+                src={`https://image.tmdb.org/t/p/original${details.poster_path}`}
+                width={300}
+                height={400}
+                priority
+              />
             </div>
             <div className={styles.movieInfo}>
-              <span className={styles.metric}>{details.popularity}</span>
-              <span className={styles.metric}>{details.vote_count}</span>
+              <span className={styles.metric}>
+                <h3 className={styles.infoHeader}>Popularity Score</h3>{' '}
+                <span className={styles.popularity}>{details.popularity}</span>
+              </span>
+              <span className={styles.metric}>
+                <h3 className={styles.infoHeader}>Overview</h3>
+                <p className={styles.overview}>{details.overview}</p>
+              </span>
             </div>
           </div>
           <ThemeSwitch />

@@ -6,6 +6,7 @@ module.exports = {
       'pbs.twimg.com',
       'api.producthunt.com',
       'avatars.githubusercontent.com',
+      'image.tmdb.org',
     ],
   },
 };

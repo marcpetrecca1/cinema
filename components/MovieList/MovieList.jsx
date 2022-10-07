@@ -13,6 +13,8 @@ export default function MovieList({ movieList, showMovieList, searchList }) {
               popularity={movie.popularity}
               voteCount={movie.vote_count}
               posterPath={movie.poster_path}
+              releaseDate={movie.release_date}
+              overview={movie.overview}
             />
           ))
         : searchList.map((movie) => (

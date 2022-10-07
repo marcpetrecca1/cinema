@@ -1,8 +1,17 @@
 .formContainer {
   display: flex;
-  gap: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .searchInput {
-  border-radius: 12px;
+  border-radius: 20px 0 0 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.searchSubmit {
+  background-color: rgb(5, 31, 45);
+  color: rgb(185, 228, 246);
+  padding: 0 15px;
+  border-radius: 0 20px 20px 0;
 }
