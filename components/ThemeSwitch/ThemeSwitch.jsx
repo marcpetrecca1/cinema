@@ -1,5 +1,5 @@
 import styles from './themeswitch.module.css';
-import Button from '../Button';
+import Button from '../Button/Button.jsx';
 import { useTheme } from '../../context/state';
 import { useLayoutEffect } from 'react';
 
