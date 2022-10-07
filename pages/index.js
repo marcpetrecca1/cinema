@@ -33,6 +33,7 @@ export default function Home({ list }) {
   const [showMovieList, setShowMovieList] = useState(true);
   const [searchInput, setSearchInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [noResults, setNoResults] = useState(false);
   const { themeState } = useTheme();
 
   useEffect(() => {
@@ -44,6 +45,7 @@ export default function Home({ list }) {
       return setShowMovieList(false);
     }
     setShowMovieList(true);
+    setNoResults(false);
     setSearchList([]);
   };
 
@@ -75,6 +77,11 @@ export default function Home({ list }) {
       );
       let newList = await res.json().then((result) => result.results);
       setSearchList(newList);
+      if (newList.length === 0) {
+        setNoResults(true);
+      } else {
+        setNoResults(false);
+      }
       setIsLoading(false);
     } catch (error) {
       console.error(error);
@@ -120,6 +127,11 @@ export default function Home({ list }) {
         />
       )}
       {isLoading && <LoadingSpinner />}
+      {noResults && (
+        <div className={styles.noSearchResults}>
+          There are no results for your entry
+        </div>
+      )}
       <ThemeSwitch />
     </div>
   );

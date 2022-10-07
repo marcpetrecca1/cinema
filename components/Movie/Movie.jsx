@@ -11,6 +11,7 @@ export default function Movie({
   releaseDate,
 }) {
   const release = new Date(releaseDate).toLocaleDateString();
+  const num = popularity;
   return (
     <div className={styles.detailsContainer} key={id}>
       <div className={styles.header}>
@@ -35,7 +36,6 @@ export default function Movie({
             <h3 className={styles.infoHeader}>Popularity Score</h3>{' '}
             <span className={styles.popularity}>{popularity}</span>
           </span>
-          <span className={styles.metric}>{voteCount}</span>
         </div>
       </div>
     </div>

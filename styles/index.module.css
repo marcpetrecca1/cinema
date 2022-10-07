@@ -22,3 +22,8 @@
   font-weight: 600;
   color: rgb(5, 31, 45);
 }
+
+.noSearchResults {
+  font-size: 16px;
+  color: rgb(5, 31, 45);
+}

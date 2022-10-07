@@ -5,7 +5,6 @@ import { useTheme } from '../../context/state';
 import Image from 'next/image';
 import ThemeSwitch from '@/components/ThemeSwitch';
 import styles from '../../styles/moviedetails.module.css';
-import { info } from 'autoprefixer';
 
 export default function Details() {
   const [details, setDetails] = useState(null);
