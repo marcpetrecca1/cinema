@@ -12,8 +12,6 @@ export default function Details() {
 
   const { movieId } = router.query;
 
-  console.log('themeState from Details page', themeState);
-
   const getDetails = async (id) => {
     let res = await fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
@@ -25,11 +23,15 @@ export default function Details() {
 
   useEffect(() => {
     getDetails(movieId);
-  });
+  }, []);
 
   return (
     details && (
-      <div className={themeState ? 'appContainerWhite' : 'appContainerGrey'}>
+      <div
+        className={
+          themeState ? styles.appContainerWhite : styles.appContainerGrey
+        }
+      >
         <div className={styles.detailsContainer} key={details.id}>
           <h2 className={styles.title}>{details.title}</h2>
           <div className={styles.styleDetails}>

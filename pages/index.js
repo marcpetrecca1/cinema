@@ -33,8 +33,6 @@ export default function Home({ list }) {
   const [searchInput, setSearchInput] = useState('');
   const { themeState } = useTheme();
 
-  console.log('themeState from main app', themeState);
-
   useEffect(() => {
     toggleList();
   }, [searchInput]);
