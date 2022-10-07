@@ -47,6 +47,12 @@ export default function Details() {
             </div>
             <div className={styles.movieInfo}>
               <span className={styles.metric}>
+                <h3 className={styles.infoHeader}>Release Date</h3>{' '}
+                <span className={styles.releaseDate}>
+                  {new Date(details.release_date).toLocaleDateString()}
+                </span>
+              </span>
+              <span className={styles.metric}>
                 <h3 className={styles.infoHeader}>Popularity Score</h3>{' '}
                 <span className={styles.popularity}>{details.popularity}</span>
               </span>

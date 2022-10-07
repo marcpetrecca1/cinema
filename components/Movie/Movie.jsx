@@ -10,6 +10,7 @@ export default function Movie({
   posterPath,
   releaseDate,
 }) {
+  const release = new Date(releaseDate).toLocaleDateString();
   return (
     <div className={styles.detailsContainer} key={id}>
       <div className={styles.header}>
@@ -18,7 +19,7 @@ export default function Movie({
             <h2 className={styles.title}>{title}</h2>
           </a>
         </Link>
-        <p className={styles.releaseDate}>Release Date: {releaseDate}</p>
+        <p className={styles.releaseDate}>Release Date: {release}</p>
       </div>
       <div className={styles.styleDetails}>
         <div className={styles.imageContainer}>
