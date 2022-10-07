@@ -11,7 +11,6 @@ export default function Movie({
   releaseDate,
 }) {
   const release = new Date(releaseDate).toLocaleDateString();
-  const num = popularity;
   return (
     <div className={styles.detailsContainer} key={id}>
       <div className={styles.header}>
