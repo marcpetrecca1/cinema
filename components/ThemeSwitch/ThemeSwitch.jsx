@@ -1,5 +1,5 @@
 import styles from './themeswitch.module.css';
-import Button from '../Button/';
+import Button from '../Button/Button';
 import { useTheme } from '../../context/state';
 
 export default function ThemeSwitch() {
